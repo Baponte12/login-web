@@ -1,0 +1,17 @@
+.section-login{
+  background-image: url("~assets/images/bg-login.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+
+  .content-form{
+    min-width: 400px;
+  }
+
+  .btn-login{
+    background-color: #B1BDC7;
+    color: white;
+    padding: 12px 24px;
+  }
+}
+

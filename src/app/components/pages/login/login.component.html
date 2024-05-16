@@ -1,0 +1,41 @@
+<div class="section-login d-flex justify-content-center align-items-center">
+  <div>
+    <div class="d-flex justify-content-center align-items-center flex-column">
+      <h1 class="color-secondary font-black text-center">BIENVENIDO</h1>
+      <p class="color-secondary">Inicia sesión para continuar</p>
+      <div *ngIf="errorMessage">
+        <div class="alert alert-danger" role="alert">
+          {{ errorMessage }}
+        </div>
+      </div>
+      <form class="mt-4 content-form" (ngSubmit)="onSubmit()" ngNativeValidate>
+
+        <div class="input-group prepend mb-4">
+          <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <img src="./assets/images/svg/user.svg" alt="">
+                    </span>
+          </div>
+          <input type="text" class="form-control" required placeholder="Ingresa tu usuario" [(ngModel)]="user.email"
+                 name="email">
+        </div>
+
+
+        <div class="input-group prepend mb-3">
+          <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <img src="./assets/images/svg/password.svg" alt="">
+                    </span>
+          </div>
+          <input type="password" class="form-control" [(ngModel)]="user.password"
+                 name="password" placeholder="*********" required togglePassword>
+        </div>
+
+
+        <div class="d-flex flex-column align-items-center">
+          <button class="btn btn-login mt-4" type="submit">INGRESAR</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

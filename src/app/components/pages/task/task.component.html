@@ -1,0 +1,45 @@
+<div class="content-task d-flex align-items-center justify-content-center flex-column">
+  <div class="card-task mb-4">
+    <div class="">
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="title">Usuario</h1>
+        <button class="btn" (click)="logOut()"><img src="assets/images/svg/logout.svg" alt="icon-close" class="icon">
+        </button>
+      </div>
+      <ul>
+        <li><strong>Nick:</strong> {{ user?.email || 'null' }}</li>
+        <li><strong>Token:</strong> {{ user?.token || 'null' }}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-task">
+    <div class="">
+      <h1 class="title mb-4">Lista de Tareas</h1>
+      <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+        <input type="text" formControlName="task" class="input-task" placeholder="Ingrese nueva tarea">
+        <button type="submit" class="btn btn-add ms-4">Agregar</button>
+      </form>
+    </div>
+    <div class="tasks mt-4">
+      <div class="no-content d-flex align-items-center justify-content-center" *ngIf="tasks.length === 0">¡Aun no hay
+        tareas!
+      </div>
+      <div *ngIf="tasks.length !== 0">
+        <div class="display-grid header-content">
+          <p class="mb-0 fw-bold color-primary">TAREA</p>
+          <p class="mb-0 fw-bold color-primary">ACCIÓN</p>
+        </div>
+        <div class="display-grid body-content" *ngFor="let task of tasks; let i = index"
+             [ngClass]="{'even': i % 2 === 0, 'odd': i % 2 !== 0}">
+          <div class="d-flex align-items-center">
+            <input type="checkbox" [(ngModel)]="task.completed">
+            <p [ngClass]="{'completed-task': task.completed}" class="task-text mb-0 ms-2">{{ task.name }}</p>
+          </div>
+          <button class="btn" *ngIf="!task.completed" (click)="removeTask(task)"><img
+            src="assets/images/svg/trash.svg" alt="icon-close" class="icon">
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

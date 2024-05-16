@@ -1,0 +1,65 @@
+.content-task {
+  min-height: 100vh;
+  background: #f4f4f4;
+
+  .card-task {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    min-width: 500px;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+
+  .title {
+    color: #0D3F69;
+    font-size: 25px;
+  }
+
+  .no-content {
+    min-height: 10vh;
+  }
+
+  .btn-add {
+    background: #B1BDC7;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+
+  .even {
+    background: transparent;
+    color: #0D3F69;
+  }
+
+  .odd {
+    background: #B1BDC7;
+    color: white;
+  }
+
+  .input-task {
+    height: 48px;
+    border-radius: 8px;
+    border: 1px solid #0D3F69;
+    padding: 0 6px;
+  }
+
+  .display-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    text-align: center;
+  }
+
+  .header-content {
+    border-bottom: 1px solid #B1BDC7;
+  }
+
+  .body-content {
+    padding: 0 16px;
+  }
+
+  .icon {
+    height: 15px;
+  }
+}

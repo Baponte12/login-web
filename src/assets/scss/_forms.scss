@@ -1,0 +1,38 @@
+.input-group {
+  box-shadow: 0 4px 4px 0 #00000040;
+  border-radius: 13px;
+
+  .input-group-text {
+    background-color: white;
+    border: 0;
+    border-radius: 13px 0 0 13px;
+    padding-left: 25px;
+    padding-right: 1px;
+    height: 77px;
+
+
+  }
+
+  .form-control {
+    background-color: white;
+    height: 77px;
+    border: 1px solid white;
+    border-left: 0 !important;
+    border-radius: 0 13px 13px 0 !important;
+    color: black;
+    font-family: "Font-Regular", sans-serif;
+  }
+
+
+  &:focus-within > .input-group-append .input-group-text img,
+  &:focus-within > .input-group-prepend .input-group-text img {
+    opacity: 1;
+  }
+
+  .form-control:focus{
+    box-shadow: none !important;
+  }
+}
+
+
+
